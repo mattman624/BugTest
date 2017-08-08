@@ -13,23 +13,7 @@ namespace BugTest.Tests
     [TestFixture]
     public class UnitTest1
     {
-        [Test]
-        public async Task TestMethod1()
-        {
-            string message = "This is the message";
-            var test = new TestHelper();
-
-            test.Google.Setup(f => f.CallGoogle()).ReturnsAsync(message);
-            test.Network.Setup(f => f.IsConnectedToInternet()).Returns(true);
-
-            var model = test.Container.Resolve<TestPageViewModel>();
-
-            //await test.CallAsync(model);
-            //await model.async();
-
-            Assert.IsTrue(model.AsyncRan);
-            Assert.AreEqual(message, model.Display);
-        }
+        
     }
 
     public class TestHelper

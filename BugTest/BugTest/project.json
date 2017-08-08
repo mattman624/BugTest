@@ -1,7 +1,6 @@
 ﻿{
   "supports": {},
   "dependencies": {
-    "Highway.Data.EntityFrameworkCore": "7.0.0-alpha3",
     "Microsoft.EntityFrameworkCore": "2.0.0-preview1-final",
     "Microsoft.EntityFrameworkCore.Relational": "2.0.0-preview1-final",
     "Microsoft.EntityFrameworkCore.Sqlite": "2.0.0-preview1-final",

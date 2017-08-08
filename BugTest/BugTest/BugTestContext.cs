@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BugTest.Models;
-using Highway.Data;
 //using BugTest.Models;
 //using Highway.Data;
 using Microsoft.Data.Sqlite;
@@ -13,7 +12,7 @@ using PCLStorage;
 
 namespace BugTest
 {
-    public class BugTestContext : DataContext
+    public class BugTestContext : DbContext
     {
         private string filename => "Test.Test";
         public BugTestContext(DbContextOptions options) : base(options)

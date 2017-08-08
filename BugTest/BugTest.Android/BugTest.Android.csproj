@@ -51,12 +51,6 @@
     <Reference Include="FormsViewGroup, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.2.3.4.247\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
     </Reference>
-    <Reference Include="Highway.Data, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Highway.Data.7.0.0-alpha3\lib\netstandard1.3\Highway.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="Highway.Data.EntityFrameworkCore, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Highway.Data.EntityFrameworkCore.7.0.0-alpha3\lib\netstandard1.3\Highway.Data.EntityFrameworkCore.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNetCore.Hosting.Abstractions, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.AspNetCore.Hosting.Abstractions.1.1.1\lib\netstandard1.3\Microsoft.AspNetCore.Hosting.Abstractions.dll</HintPath>
     </Reference>
