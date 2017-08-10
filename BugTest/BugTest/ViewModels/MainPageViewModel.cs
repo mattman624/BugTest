@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using BugTest.Contract;
 using BugTest.Models;
+using Highway.Data;
 using Microsoft.EntityFrameworkCore;
 using Plugin.DeviceOrientation;
 using Plugin.DeviceOrientation.Abstractions;
@@ -14,8 +15,12 @@ namespace BugTest.ViewModels
 {
     public class MainPageViewModel 
     {
-        public MainPageViewModel(INetworkConnection networkConnection, INavigationService navigationService) 
+        private IRepository _repo;
+
+        public MainPageViewModel(INetworkConnection networkConnection, INavigationService navigationService,
+            IRepository repo) 
         {
+            _repo = repo;
             var lela = new Captain()
             {
                 Id = 1,
@@ -31,13 +36,9 @@ namespace BugTest.ViewModels
                 Name = "Planet Express Ship"
             };
 
-            using (var ctx = new BugTestContext(new DbContextOptions<BugTestContext>()))
-            {
-                ctx.Database.EnsureCreated();
-                ctx.Add(lela);
-                ctx.Add(ship);
-                ctx.SaveChanges();
-            }
+            _repo.Context.Add(lela);
+            _repo.Context.Add(ship);
+            _repo.Context.Commit();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using BugTest.Models;
+using Highway.Data;
 //using BugTest.Models;
-//using Highway.Data;
 using Microsoft.EntityFrameworkCore;
 
 using Microsoft.Data.Sqlite;
@@ -10,7 +10,7 @@ using PCLStorage;
 
 namespace BugTest
 {
-    public class BugTestContext : DbContext
+    public class BugTestContext : DataContext
     {
         private string filename => "Test.Test";
         public BugTestContext(DbContextOptions options) : base(options)
