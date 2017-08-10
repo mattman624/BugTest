@@ -25,7 +25,7 @@ namespace BugTest
         {
             InitializeComponent();
 
-            NavigationService.NavigateAsync("http://myapp.com/MainPage");
+           var result =  NavigationService.NavigateAsync("http://myapp.com/MainPage");
         }
 
         protected override void RegisterTypes()

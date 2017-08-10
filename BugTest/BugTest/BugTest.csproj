@@ -70,9 +70,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Data.Sqlite">
-      <HintPath>..\..\packages\Microsoft.Data.Sqlite.Core.2.0.0-preview1-final\lib\netstandard1.2\Microsoft.Data.Sqlite.dll</HintPath>
-    </Reference>
     <Reference Include="System.Data">
       <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v1.0\System.Data.dll</HintPath>
     </Reference>
