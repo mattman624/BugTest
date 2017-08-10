@@ -5,6 +5,7 @@ using System.Text;
 using BugTest.Contract;
 using BugTest.Services;
 using BugTest.Views;
+using Highway.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Practices.Unity;
 using Prism.Unity;
@@ -25,14 +26,21 @@ namespace BugTest
         {
             InitializeComponent();
 
-            NavigationService.NavigateAsync("http://myapp.com/MainPage");
+           var result =  NavigationService.NavigateAsync("http://myapp.com/MainPage");
         }
 
         protected override void RegisterTypes()
         {
             Container.RegisterType<IGoogleCall, GoogleCaller>();
             Container.RegisterType<INetworkConnection, NetworkConnection>();
-            
+
+            var context = new BugTestContext(new DbContextOptions<BugTestContext>());
+            context.Database.EnsureCreated();
+            Container.RegisterInstance<IDataContext>(context);
+            Container.RegisterType<IRepository, Repository>();
+
+
+
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainPage>();
         }
