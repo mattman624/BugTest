@@ -7,7 +7,7 @@
     "Microsoft.EntityFrameworkCore.Relational": "2.0.0-preview1-final",
     "Microsoft.EntityFrameworkCore.Sqlite.Core": "2.0.0-preview1-final",
     "Microsoft.EntityFrameworkCore.Tools": "2.0.0-preview1-final",
-    "NETStandard.Library": "2.0.0",
+    "NETStandard.Library": "2.0.0-preview1-25301-01",
     "PCLStorage": "1.0.2",
     "Plugin.DeviceOrientation": "1.0.4",
     "Prism.Unity.Forms": "6.3.0",

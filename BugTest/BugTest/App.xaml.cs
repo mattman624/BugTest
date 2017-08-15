@@ -8,6 +8,7 @@ using BugTest.Views;
 using Highway.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Practices.Unity;
+using Prism.Navigation;
 using Prism.Unity;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -17,22 +18,22 @@ namespace BugTest
 {
     public partial class App : PrismApplication
     {
-        public App()
+        public App(IPlatformInitializer initializer = null) : base(initializer)
         {
-            //MainPage = new BugTest.MainPage();
         }
 
-        protected override void OnInitialized()
+        protected async override void OnInitialized()
         {
             InitializeComponent();
 
-           var result =  NavigationService.NavigateAsync("http://myapp.com/MainPage");
+           NavigationService.NavigateAsync("http://myapp.com/MainPage");
         }
 
         protected override void RegisterTypes()
         {
             Container.RegisterType<IGoogleCall, GoogleCaller>();
             Container.RegisterType<INetworkConnection, NetworkConnection>();
+            Container.RegisterType<INavigationService, PageNavigationService>();
 
             var context = new BugTestContext(new DbContextOptions<BugTestContext>());
             context.Database.EnsureCreated();
@@ -43,6 +44,7 @@ namespace BugTest
 
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainPage>();
+            Container.RegisterTypeForNavigation<UpdatePage>();
         }
 
         protected override void OnStart()

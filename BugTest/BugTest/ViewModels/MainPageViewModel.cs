@@ -13,14 +13,17 @@ using Prism.Navigation;
 
 namespace BugTest.ViewModels
 {
-    public class MainPageViewModel 
+    public class MainPageViewModel : ViewModelBase
     {
-        private IRepository _repo;
-
-        public MainPageViewModel(INetworkConnection networkConnection, INavigationService navigationService,
-            IRepository repo) 
+       
+        public MainPageViewModel(INavigationService navigationService,
+            IRepository repo) : base(repo, navigationService)
         {
-            _repo = repo;
+            
+        }
+
+        public override void OnNavigatedTo(NavigationParameters parameters)
+        {
             var lela = new Captain()
             {
                 Id = 1,
@@ -36,9 +39,12 @@ namespace BugTest.ViewModels
                 Name = "Planet Express Ship"
             };
 
-            _repo.Context.Add(lela);
-            _repo.Context.Add(ship);
-            _repo.Context.Commit();
+            Repository.Context.Add(lela);
+            Repository.Context.Add(ship);
+            Repository.Context.Commit();
+
+            NavService.NavigateAsync("UpdatePage");
+            base.OnNavigatedTo(parameters);
         }
     }
 }
